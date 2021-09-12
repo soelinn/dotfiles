@@ -1,0 +1,13 @@
+[alias]
+	co = checkout
+  f = fetch --prune
+	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=relative
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [a:%an,c:%cn]" --decorate --numstat
+	sm = submodule
+	st = status
+	sl = stash list
+	sp = stash pop
+[commit]
+	gpgsign = true
+[push]
+	default = simple
