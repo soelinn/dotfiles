@@ -7,10 +7,12 @@ else # macOS `ls`
 	export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
 
+alias k='kubectl'
 alias grep='grep --color=auto'
 alias l='ls -alF ${colorflag}'
 alias r='reset'
 alias rl='reset;ls -alF ${colorflag}'
+
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
