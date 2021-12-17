@@ -3,7 +3,7 @@
 # load files from .bashrc.d folder
 if [ -d ~/.dotfiles/.bashrc.d ]; then
     for rc in ~/.dotfiles/.bashrc.d/*; do
-        if [ -f "$rc"]; then
+        if [ -f "$rc" ]; then
             . "$rc"
         fi
     done
