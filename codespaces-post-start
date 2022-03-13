@@ -1,0 +1,29 @@
+#!/bin/sh
+# Codespaces location: /workspaces/.codespaces/.persistedshare/dotfiles/codespaces-post-start
+# execution log: /workspaces/.codespaces/.persistedshare/creation.log
+# testing:
+# gh cs create --status --repo github/github
+# gh cs list
+# gh cs list | tail -n 1 | cut -f 1 | xargs gh cs delete -c
+
+SELFDIR=$(cd "$(dirname "$0")"; pwd)
+
+$SELFDIR/codespaces/set-petname
+
+# Copy config files and folders to $HOME
+cp $SELFDIR/codespaces/.custom-cs-prompt ~/
+cp $SELFDIR/.tmux.conf ~/
+cp $SELFDIR/.editorconfig ~/
+cp -R $SELFDIR/.bashrc.d ~/
+cp -R $SELFDIR/.omnisharp ~/
+
+# Source my customization files from ~/.bashrc.d folder
+if grep -q "source ~/.bashrc.d/aliases" ~/.bashrc
+then
+  echo "~/.bashrc already updated"
+else
+  echo "Adding my own customization bash scripts to ~/.bashrc"
+  echo "\n" >> ~/.bashrc
+  echo "source ~/.custom-cs-prompt"     >> ~/.bashrc
+  echo "source ~/.bashrc.d/aliases"     >> ~/.bashrc
+fi
