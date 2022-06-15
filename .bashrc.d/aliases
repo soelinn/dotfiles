@@ -21,9 +21,12 @@ alias path='echo -e ${PATH//:/\\n}'
 # Git Aliases
 alias gb='git branch'
 alias gco='git checkout'
+alias gd='git diff'
 alias gfs='git fetch;git status'
 alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d %Creset%s%Cblue [a:%an,c:%cn]" --decorate --numstat'
 alias gls='git log --pretty=format:"%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%an]" --decorate --date=relative'
 alias gp='git pull'
 alias gst='git status'
 alias rst='reset;git status'
+
+alias rt='TEST_ALL_FEATURES=1 bin/rails test'
