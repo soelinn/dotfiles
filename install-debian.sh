@@ -20,5 +20,5 @@ cp ./.config ~/
 echo "options nvidia NVreg_PreserveVideoMemoryAllocations=1
 options nvidia-drm modeset=1
 options nvidia-drm fbdev=1" > ./nvidia-wayland.conf
-sudo chown root:root /nvidia-wayland.conf
+sudo chown root:root ./nvidia-wayland.conf
 sudo mv ./nvidia-wayland.conf /etc/modprobe.d/nvidia-wayland.conf
